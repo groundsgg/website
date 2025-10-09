@@ -23,4 +23,38 @@
     transition: transform 0.3s ease-out;
     mix-blend-mode: screen;
   }
+  
+  /* Language toggle styles */
+  .language-toggle {
+    position: relative;
+  }
+  
+  .language-toggle button {
+    transition: all 0.2s ease;
+  }
+  
+  .language-toggle button:hover {
+    transform: translateY(-1px);
+  }
+  
+  .language-toggle button:active {
+    transform: translateY(0);
+  }
+  
+  #lang-dropdown {
+    transform: translateY(-8px);
+    transition: all 0.2s ease;
+  }
+  
+  #lang-dropdown.opacity-100 {
+    transform: translateY(0);
+  }
+  
+  .lang-option {
+    transition: all 0.15s ease;
+  }
+  
+  .lang-option:hover {
+    transform: translateX(2px);
+  }
 }

@@ -3,31 +3,55 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>grounds.gg - Building the foundation for the next generation of multiplayer experiences.</title>
+  <title data-lang="title">grounds.gg - Building the foundation for the next generation of multiplayer experiences.</title>
   <link rel="preload" href="/styles.css" as="style" />
   <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
   <meta name="description" content="grounds.gg - Building the foundation for the next generation of multiplayer experiences." />
 </head>
 <body class="h-full bg-ink text-mist antialiased flex flex-col">
+  <!-- Language Toggle -->
+  <div class="fixed top-4 right-4 z-50">
+    <div class="language-toggle">
+      <button id="lang-toggle" class="flex items-center gap-2 px-3 py-2 bg-ink/80 border border-glow/20 rounded-lg text-glow hover:bg-glow/10 hover:border-glow/40 transition-all duration-200 backdrop-blur-sm">
+        <span id="current-flag">🇺🇸</span>
+        <span id="current-lang">EN</span>
+        <svg class="w-4 h-4 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <div id="lang-dropdown" class="absolute top-full right-0 mt-2 w-32 bg-ink/95 border border-glow/20 rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 backdrop-blur-sm">
+        <button class="lang-option w-full text-left px-3 py-2 text-glow hover:bg-glow/10 transition-colors flex items-center gap-2" data-lang="en">
+          <span>🇺🇸</span>
+          <span>English</span>
+        </button>
+        <button class="lang-option w-full text-left px-3 py-2 text-glow hover:bg-glow/10 transition-colors flex items-center gap-2" data-lang="de">
+          <span>🇩🇪</span>
+          <span>Deutsch</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <main class="flex-1 flex items-center justify-center">
     <section class="px-6 py-16 text-center slow-fade">
-      <h1 class="text-3xl md:text-5xl font-semibold text-glow soft-glow">Grounds.GG</h1>
+      <h1 class="text-3xl md:text-5xl font-semibold text-glow soft-glow" data-lang="heading">Grounds.GG</h1>
 
-      <p class="mt-6 text-lg md:text-xl text-mist/90 max-w-prose mx-auto font-medium">
+      <p class="mt-6 text-lg md:text-xl text-mist/90 max-w-prose mx-auto font-medium" data-lang="tagline">
         Building the foundation for the next generation of multiplayer experiences.
       </p>
 
       <div class="mt-8 max-w-2xl mx-auto">
-        <p class="text-base md:text-lg text-mist/80 mb-4">
+        <p class="text-base md:text-lg text-mist/80 mb-4" data-lang="description1">
           A connected platform for creators, developers, and players.
         </p>
-        <p class="text-base md:text-lg text-mist/80">
+        <p class="text-base md:text-lg text-mist/80" data-lang="description2">
           High-quality game infrastructure, tools, and worlds — accessible to everyone.
         </p>
       </div>
 
       <div class="mt-16 pt-8 border-t border-mist/10">
-        <p class="text-lg text-glow mb-8 font-medium">
+        <p class="text-lg text-glow mb-8 font-medium" data-lang="cta">
           Ready to build the future of multiplayer experiences?
         </p>
       </div>
@@ -39,15 +63,15 @@
           <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
           </svg>
-          GitHub
+          <span data-lang="githubButton">GitHub</span>
         </a>
-            <a href="mailto:hi@grounds.gg?subject=Grounds.GG%20Inquiry"
+        <a href="mailto:hi@grounds.gg?subject=Grounds.GG%20Inquiry"
            class="inline-flex items-center px-6 py-3 bg-glow/10 border border-glow/20 rounded-lg text-glow hover:bg-glow/20 hover:border-glow/40 transition-all duration-200 font-medium"
            rel="noopener noreferrer">
           <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
             <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
           </svg>
-          Let's connect
+          <span data-lang="contactButton">Let's connect</span>
         </a>
       </div>
     </section>
@@ -56,13 +80,13 @@
   <footer class="px-6 py-8 border-t border-mist/10">
     <div class="text-center max-w-4xl mx-auto">
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-mist/60">
-          <div>© 2024 Grounds.GG. All rights reserved.</div>
+          <div data-lang="footerCopyright">© 2024 Grounds.GG. All rights reserved.</div>
           <div class="flex items-center gap-4">
             <a href="https://github.com/GroundsGG" class="hover:text-glow transition-colors" target="_blank" rel="noopener noreferrer">
-              GitHub
+              <span data-lang="footerGithub">GitHub</span>
             </a>
             <span class="opacity-50">•</span>
-            <span>grounds.gg</span>
+            <span data-lang="footerDomain">grounds.gg</span>
           </div>
         </div>
       </div>
@@ -73,7 +97,182 @@
   <div id="cursor-highlight" class="cursor-highlight"></div>
 
   <script>
+    // Language configuration and content
+    const languages = {
+      en: {
+        code: 'en',
+        name: 'English',
+        flag: '🇺🇸',
+        dir: 'ltr'
+      },
+      de: {
+        code: 'de', 
+        name: 'Deutsch',
+        flag: '🇩🇪',
+        dir: 'ltr'
+      }
+    };
+
+    const content = {
+      en: {
+        title: 'grounds.gg - Building the foundation for the next generation of multiplayer experiences.',
+        metaDescription: 'grounds.gg - Building the foundation for the next generation of multiplayer experiences.',
+        heading: 'Grounds.GG',
+        tagline: 'Building the foundation for the next generation of multiplayer experiences.',
+        description1: 'A connected platform for creators, developers, and players.',
+        description2: 'High-quality game infrastructure, tools, and worlds — accessible to everyone.',
+        cta: 'Ready to build the future of multiplayer experiences?',
+        githubButton: 'GitHub',
+        contactButton: "Let's connect",
+        footerCopyright: '© 2024 Grounds.GG. All rights reserved.',
+        footerGithub: 'GitHub',
+        footerDomain: 'grounds.gg',
+        emailSubject: 'Grounds.GG Inquiry'
+      },
+      de: {
+        title: 'grounds.gg - Das Fundament für die nächste Generation von Multiplayer-Erlebnissen.',
+        metaDescription: 'grounds.gg - Das Fundament für die nächste Generation von Multiplayer-Erlebnissen.',
+        heading: 'Grounds.GG',
+        tagline: 'Das Fundament für die nächste Generation von Multiplayer-Erlebnissen.',
+        description1: 'Eine vernetzte Plattform für Kreatoren, Entwickler und Spieler.',
+        description2: 'Hochwertige Spielinfrastruktur, Tools und Welten — für alle zugänglich.',
+        cta: 'Bereit, die Zukunft von Multiplayer-Erlebnissen zu gestalten?',
+        githubButton: 'GitHub',
+        contactButton: 'Kontakt aufnehmen',
+        footerCopyright: '© 2024 Grounds.GG. Alle Rechte vorbehalten.',
+        footerGithub: 'GitHub',
+        footerDomain: 'grounds.gg',
+        emailSubject: 'Grounds.GG Anfrage'
+      }
+    };
+
+    // Language detection and persistence
+    function detectLanguage() {
+      // Check URL parameter first
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlLang = urlParams.get('lang');
+      if (urlLang && languages[urlLang]) {
+        return urlLang;
+      }
+      
+      // Check localStorage
+      const storedLang = localStorage.getItem('grounds-lang');
+      if (storedLang && languages[storedLang]) {
+        return storedLang;
+      }
+      
+      // Check browser language
+      const browserLang = navigator.language.split('-')[0];
+      if (languages[browserLang]) {
+        return browserLang;
+      }
+      
+      // Default to English
+      return 'en';
+    }
+
+    function setLanguage(lang) {
+      if (!languages[lang]) return;
+      
+      localStorage.setItem('grounds-lang', lang);
+      
+      // Update URL without page reload
+      const url = new URL(window.location);
+      url.searchParams.set('lang', lang);
+      window.history.replaceState({}, '', url);
+      
+      // Update page content
+      updatePageContent(lang);
+    }
+
+    function updatePageContent(lang) {
+      const langContent = content[lang];
+      const langConfig = languages[lang];
+      
+      // Update document attributes
+      document.documentElement.lang = lang;
+      document.documentElement.dir = langConfig.dir;
+      
+      // Update meta title and description
+      document.title = langContent.title;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.content = langContent.metaDescription;
+      
+      // Update content with data attributes
+      document.querySelectorAll('[data-lang]').forEach(element => {
+        const key = element.getAttribute('data-lang');
+        if (langContent[key]) {
+          element.textContent = langContent[key];
+        }
+      });
+      
+      // Update href attributes
+      document.querySelectorAll('[data-lang-href]').forEach(element => {
+        const key = element.getAttribute('data-lang-href');
+        if (langContent[key]) {
+          element.href = langContent[key];
+        }
+      });
+    }
+    
     document.addEventListener('DOMContentLoaded', function() {
+      // Initialize language
+      const currentLang = detectLanguage();
+      updatePageContent(currentLang);
+      
+      // Language toggle functionality
+      const langToggle = document.getElementById('lang-toggle');
+      const langDropdown = document.getElementById('lang-dropdown');
+      const currentFlag = document.getElementById('current-flag');
+      const currentLangSpan = document.getElementById('current-lang');
+      const langOptions = document.querySelectorAll('.lang-option');
+      
+      // Update toggle display
+      function updateToggleDisplay(lang) {
+        const langConfig = languages[lang];
+        currentFlag.textContent = langConfig.flag;
+        currentLangSpan.textContent = langConfig.code.toUpperCase();
+      }
+      
+      // Toggle dropdown
+      langToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const isOpen = langDropdown.classList.contains('opacity-100');
+        
+        if (isOpen) {
+          langDropdown.classList.remove('opacity-100', 'visible');
+          langDropdown.classList.add('opacity-0', 'invisible');
+        } else {
+          langDropdown.classList.remove('opacity-0', 'invisible');
+          langDropdown.classList.add('opacity-100', 'visible');
+        }
+      });
+      
+      // Handle language selection
+      langOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          const selectedLang = this.getAttribute('data-lang');
+          setLanguage(selectedLang);
+          updateToggleDisplay(selectedLang);
+          
+          // Close dropdown
+          langDropdown.classList.remove('opacity-100', 'visible');
+          langDropdown.classList.add('opacity-0', 'invisible');
+        });
+      });
+      
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!langToggle.contains(e.target) && !langDropdown.contains(e.target)) {
+          langDropdown.classList.remove('opacity-100', 'visible');
+          langDropdown.classList.add('opacity-0', 'invisible');
+        }
+      });
+      
+      // Initialize toggle display
+      updateToggleDisplay(currentLang);
+      
+      // Cursor highlight functionality
       const highlight = document.getElementById('cursor-highlight');
       const centerX = window.innerWidth / 2;
       const centerY = window.innerHeight / 2;
