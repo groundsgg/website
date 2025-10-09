@@ -1,0 +1,14 @@
+name = "grounds-landing"
+main = "src/worker.ts"
+compatibility_date = "2025-10-09"
+
+[assets]
+directory = "public"
+
+routes = [
+  { pattern = "grounds.gg", custom_domain = true },
+  { pattern = "www.grounds.gg", custom_domain = true }
+]
+
+[observability]
+enabled = true

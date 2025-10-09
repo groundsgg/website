@@ -1,0 +1,16 @@
+{
+  "name": "grounds-placeholder",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -k \"npm:tw:watch\" \"wrangler dev\"",
+    "tw:build": "npx @tailwindcss/cli -i ./src/styles.css -o ./public/styles.css --minify",
+    "tw:watch": "npx @tailwindcss/cli -i ./src/styles.css -o ./public/styles.css --watch",
+    "build": "npm run tw:build",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.1.14",
+    "concurrently": "9.2.1"
+  }
+}
