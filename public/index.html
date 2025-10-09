@@ -276,43 +276,50 @@
       
       // Cursor highlight functionality
       const highlight = document.getElementById('cursor-highlight');
-      const centerX = window.innerWidth / 2;
-      const centerY = window.innerHeight / 2;
-      const maxDistance = 400; // Maximum distance from center
       
-      let targetX = centerX - 400;
-      let targetY = centerY - 400;
-      let currentX = centerX - 400;
-      let currentY = centerY - 400;
+      function initializeHighlight() {
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+        const maxDistance = 400; // Maximum distance from center
+        
+        let targetX = centerX - 400;
+        let targetY = centerY - 400;
+        let currentX = centerX - 400;
+        let currentY = centerY - 400;
+        
+        // Set initial position
+        highlight.style.left = currentX + 'px';
+        highlight.style.top = currentY + 'px';
+        
+        return { centerX, centerY, maxDistance, targetX, targetY, currentX, currentY };
+      }
       
-      // Set initial position
-      highlight.style.left = currentX + 'px';
-      highlight.style.top = currentY + 'px';
+      const highlightState = initializeHighlight();
       
       document.addEventListener('mousemove', function(e) {
         // Calculate distance from center
-        const deltaX = e.clientX - centerX;
-        const deltaY = e.clientY - centerY;
+        const deltaX = e.clientX - highlightState.centerX;
+        const deltaY = e.clientY - highlightState.centerY;
         const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
         
         // Limit movement to center area
-        if (distance <= maxDistance) {
-          targetX = e.clientX - 400;
-          targetY = e.clientY - 400;
+        if (distance <= highlightState.maxDistance) {
+          highlightState.targetX = e.clientX - 400;
+          highlightState.targetY = e.clientY - 400;
         } else {
           // Keep at edge of allowed area
           const angle = Math.atan2(deltaY, deltaX);
-          targetX = centerX + Math.cos(angle) * maxDistance - 400;
-          targetY = centerY + Math.sin(angle) * maxDistance - 400;
+          highlightState.targetX = highlightState.centerX + Math.cos(angle) * highlightState.maxDistance - 400;
+          highlightState.targetY = highlightState.centerY + Math.sin(angle) * highlightState.maxDistance - 400;
         }
       });
       
       function animate() {
-        currentX += (targetX - currentX) * 0.02;
-        currentY += (targetY - currentY) * 0.02;
+        highlightState.currentX += (highlightState.targetX - highlightState.currentX) * 0.02;
+        highlightState.currentY += (highlightState.targetY - highlightState.currentY) * 0.02;
         
-        highlight.style.left = currentX + 'px';
-        highlight.style.top = currentY + 'px';
+        highlight.style.left = highlightState.currentX + 'px';
+        highlight.style.top = highlightState.currentY + 'px';
         
         requestAnimationFrame(animate);
       }
