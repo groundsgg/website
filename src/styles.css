@@ -14,14 +14,22 @@
   .soft-glow { text-shadow: 0 0 8px rgba(255,255,255,0.08); }
   .cursor-highlight {
     position: fixed;
-    width: 800px;
-    height: 800px;
+    width: 600px;
+    height: 600px;
     background: radial-gradient(circle, rgba(30, 58, 138, 0.2) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
     z-index: 1;
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     mix-blend-mode: screen;
+    transform: translate(-50%, -50%);
+  }
+  
+  @media (min-width: 640px) {
+    .cursor-highlight {
+      width: 800px;
+      height: 800px;
+    }
   }
   
   /* Language toggle styles */

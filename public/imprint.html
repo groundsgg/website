@@ -11,16 +11,16 @@
 </head>
 <body class="h-full bg-ink text-mist antialiased flex flex-col">
   <!-- Language Toggle -->
-  <div class="fixed top-4 right-4 z-50">
+  <div class="fixed top-3 right-3 sm:top-4 sm:right-4 z-50">
     <div class="language-toggle">
-      <button id="lang-toggle" class="flex items-center gap-2 px-3 py-2 bg-ink/80 border border-glow/20 rounded-lg text-glow hover:bg-glow/10 hover:border-glow/40 transition-all duration-200 backdrop-blur-sm">
-        <span id="current-flag">🇺🇸</span>
-        <span id="current-lang">EN</span>
-        <svg class="w-4 h-4 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20">
+      <button id="lang-toggle" class="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-ink/80 border border-glow/20 rounded-lg text-glow hover:bg-glow/10 hover:border-glow/40 transition-all duration-200 backdrop-blur-sm text-sm sm:text-base">
+        <span id="current-flag" class="text-sm sm:text-base">🇺🇸</span>
+        <span id="current-lang" class="hidden sm:inline">EN</span>
+        <svg class="w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20">
           <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
         </svg>
       </button>
-      <div id="lang-dropdown" class="absolute top-full right-0 mt-2 w-32 bg-ink/95 border border-glow/20 rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 backdrop-blur-sm">
+      <div id="lang-dropdown" class="absolute top-full right-0 mt-2 w-28 sm:w-32 bg-ink/95 border border-glow/20 rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 backdrop-blur-sm">
         <button class="lang-option w-full text-left px-3 py-2 text-glow hover:bg-glow/10 transition-colors flex items-center gap-2" data-lang="en">
           <span>🇺🇸</span>
           <span>English</span>
@@ -34,13 +34,13 @@
   </div>
 
   <main class="flex-1 flex items-center justify-center">
-    <section class="px-6 py-16 text-center slow-fade max-w-4xl mx-auto">
-      <h1 class="text-3xl md:text-5xl font-semibold text-glow soft-glow mb-8" data-lang="heading">Impressum</h1>
+    <section class="px-4 sm:px-6 py-12 sm:py-16 text-center slow-fade max-w-4xl mx-auto">
+      <h1 class="text-2xl sm:text-3xl md:text-5xl font-semibold text-glow soft-glow mb-6 sm:mb-8" data-lang="heading">Impressum</h1>
       
-      <div class="text-left space-y-8 text-mist/90">
+      <div class="text-left space-y-6 sm:space-y-8 text-mist/90">
         <div>
-          <h2 class="text-xl font-semibold text-glow mb-4" data-lang="tmgTitle">Angaben gemäß § 5 TMG:</h2>
-          <div class="space-y-2">
+          <h2 class="text-lg sm:text-xl font-semibold text-glow mb-3 sm:mb-4" data-lang="tmgTitle">Angaben gemäß § 5 TMG:</h2>
+          <div class="space-y-1 sm:space-y-2 text-sm sm:text-base">
             <p><strong>Scelus Development</strong></p>
             <p>Lukas Jost</p>
             <p>Kölner Straße 13</p>
@@ -50,13 +50,13 @@
         </div>
 
         <div>
-          <h2 class="text-xl font-semibold text-glow mb-4" data-lang="contactTitle">Kontakt:</h2>
-          <p>E-Mail: <a href="mailto:hi@grounds.gg" class="text-glow hover:text-glow/80 transition-colors">hi@grounds.gg</a></p>
+          <h2 class="text-lg sm:text-xl font-semibold text-glow mb-3 sm:mb-4" data-lang="contactTitle">Kontakt:</h2>
+          <p class="text-sm sm:text-base">E-Mail: <a href="mailto:hi@grounds.gg" class="text-glow hover:text-glow/80 transition-colors">hi@grounds.gg</a></p>
         </div>
 
         <div>
-          <h2 class="text-xl font-semibold text-glow mb-4" data-lang="contentTitle">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</h2>
-          <div class="space-y-2">
+          <h2 class="text-lg sm:text-xl font-semibold text-glow mb-3 sm:mb-4" data-lang="contentTitle">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</h2>
+          <div class="space-y-1 sm:space-y-2 text-sm sm:text-base">
             <p><strong>Scelus Development</strong></p>
             <p>Lukas Jost</p>
             <p>Kölner Straße 13</p>
@@ -65,30 +65,30 @@
         </div>
 
         <div>
-          <h2 class="text-xl font-semibold text-glow mb-4" data-lang="disclaimerTitle">Haftungsausschluss</h2>
-          <p class="leading-relaxed" data-lang="disclaimerText">
+          <h2 class="text-lg sm:text-xl font-semibold text-glow mb-3 sm:mb-4" data-lang="disclaimerTitle">Haftungsausschluss</h2>
+          <p class="leading-relaxed text-sm sm:text-base" data-lang="disclaimerText">
             Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. 
             Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
           </p>
         </div>
       </div>
 
-      <div class="mt-12 pt-8 border-t border-mist/10">
-        <a href="/" class="inline-flex items-center px-6 py-3 bg-glow/10 border border-glow/20 rounded-lg text-glow hover:bg-glow/20 hover:border-glow/40 transition-all duration-200 font-medium">
-          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+      <div class="mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-mist/10">
+        <a href="/" class="inline-flex items-center justify-center w-full sm:w-auto px-4 sm:px-6 py-3 bg-glow/10 border border-glow/20 rounded-lg text-glow hover:bg-glow/20 hover:border-glow/40 transition-all duration-200 font-medium text-sm sm:text-base">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"></path>
           </svg>
-          Zurück zur Startseite
+          <span data-lang="backButton">Zurück zur Startseite</span>
         </a>
       </div>
     </section>
   </main>
 
-  <footer class="px-6 py-8 border-t border-mist/10">
+  <footer class="px-4 sm:px-6 py-6 sm:py-8 border-t border-mist/10">
     <div class="text-center max-w-4xl mx-auto">
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-mist/60">
-          <div>© <span id="current-year"></span> grounds.gg. Alle Rechte vorbehalten.</div>
-          <div class="flex items-center gap-4">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-xs text-mist/60">
+          <div class="text-center sm:text-left">© <span id="current-year"></span> grounds.gg. Alle Rechte vorbehalten.</div>
+          <div class="flex items-center justify-center gap-3 sm:gap-4">
             <a href="https://github.com/groundsgg" class="hover:text-glow transition-colors" target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
@@ -252,18 +252,33 @@
       // Cursor highlight functionality
       const highlight = document.getElementById('cursor-highlight');
       
+      function updateCenterPosition() {
+        highlightState.centerX = window.innerWidth / 2;
+        highlightState.centerY = window.innerHeight / 2;
+        highlightState.maxDistance = window.innerWidth < 640 ? 300 : 400;
+        
+        // Update current position to new center
+        highlightState.currentX = highlightState.centerX;
+        highlightState.currentY = highlightState.centerY;
+        highlightState.targetX = highlightState.centerX;
+        highlightState.targetY = highlightState.centerY;
+        
+        highlight.style.left = highlightState.centerX + 'px';
+        highlight.style.top = highlightState.centerY + 'px';
+      }
+      
       function initializeHighlight() {
         const centerX = window.innerWidth / 2;
         const centerY = window.innerHeight / 2;
-        const maxDistance = 400;
+        const maxDistance = window.innerWidth < 640 ? 300 : 400; // Smaller range on mobile
         
-        let targetX = centerX - 400;
-        let targetY = centerY - 400;
-        let currentX = centerX - 400;
-        let currentY = centerY - 400;
+        let targetX = centerX;
+        let targetY = centerY;
+        let currentX = centerX;
+        let currentY = centerY;
         
-        highlight.style.left = currentX + 'px';
-        highlight.style.top = currentY + 'px';
+        highlight.style.left = centerX + 'px';
+        highlight.style.top = centerY + 'px';
         
         // Fade in the highlight smoothly
         setTimeout(() => {
@@ -275,19 +290,55 @@
       
       const highlightState = initializeHighlight();
       
-      document.addEventListener('mousemove', function(e) {
-        const deltaX = e.clientX - highlightState.centerX;
-        const deltaY = e.clientY - highlightState.centerY;
+      function updateHighlightPosition(clientX, clientY) {
+        // Calculate distance from center
+        const deltaX = clientX - highlightState.centerX;
+        const deltaY = clientY - highlightState.centerY;
         const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
         
+        // Limit movement to center area
         if (distance <= highlightState.maxDistance) {
-          highlightState.targetX = e.clientX - 400;
-          highlightState.targetY = e.clientY - 400;
+          highlightState.targetX = clientX;
+          highlightState.targetY = clientY;
         } else {
+          // Keep at edge of allowed area
           const angle = Math.atan2(deltaY, deltaX);
-          highlightState.targetX = highlightState.centerX + Math.cos(angle) * highlightState.maxDistance - 400;
-          highlightState.targetY = highlightState.centerY + Math.sin(angle) * highlightState.maxDistance - 400;
+          highlightState.targetX = highlightState.centerX + Math.cos(angle) * highlightState.maxDistance;
+          highlightState.targetY = highlightState.centerY + Math.sin(angle) * highlightState.maxDistance;
         }
+      }
+      
+      // Mouse events
+      document.addEventListener('mousemove', function(e) {
+        updateHighlightPosition(e.clientX, e.clientY);
+      });
+      
+      // Touch events for mobile
+      document.addEventListener('touchmove', function(e) {
+        e.preventDefault(); // Prevent scrolling
+        if (e.touches.length > 0) {
+          const touch = e.touches[0];
+          updateHighlightPosition(touch.clientX, touch.clientY);
+        }
+      });
+      
+      // Touch start
+      document.addEventListener('touchstart', function(e) {
+        if (e.touches.length > 0) {
+          const touch = e.touches[0];
+          updateHighlightPosition(touch.clientX, touch.clientY);
+        }
+      });
+      
+      // Touch end - return to center
+      document.addEventListener('touchend', function(e) {
+        highlightState.targetX = highlightState.centerX;
+        highlightState.targetY = highlightState.centerY;
+      });
+      
+      // Window resize - update center position
+      window.addEventListener('resize', function() {
+        updateCenterPosition();
       });
       
       function animate() {
