@@ -6,8 +6,8 @@ compatibility_date = "2025-10-09"
 directory = "public"
 
 routes = [
-  { pattern = "grounds.gg", custom_domain = true },
-  { pattern = "www.grounds.gg", custom_domain = true }
+  "grounds.gg/*",
+  "www.grounds.gg/*"
 ]
 
 [observability]

@@ -29,7 +29,12 @@ This project includes automated deployment via GitHub Actions. To set it up:
    # Use "Custom token" with "Cloudflare Workers:Edit" permissions
    ```
 
-4. **Push to main branch** - The workflow will automatically deploy to Cloudflare Workers
+4. **Configure custom domains:**
+   - Add `grounds.gg` and `www.grounds.gg` to your Cloudflare account
+   - Ensure DNS is managed by Cloudflare
+   - The Worker will automatically handle both domains
+
+5. **Push to main branch** - The workflow will automatically deploy to Cloudflare Workers
 
 ## Manual Deployment
 ```bash
